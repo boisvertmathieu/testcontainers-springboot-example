@@ -3,7 +3,7 @@ schema:
 spring:
   flyway:
     baselineOnMigrate: true
-    locations: classpath:db/migration,classpath:/db/testdata
+    locations: classpath:/db/migration,classpath:/db/testdata
     enabled: true
     placeholders:
       go: ;
