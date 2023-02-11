@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  sql-server-db:
+    hostname: localsqlserver
+    image: mcr.microsoft.com/mssql/server:2019-CU18-ubuntu-20.04
+    ports:
+      - "1433:1433"
+    environment:
+      - SA_PASSWORD=Password1234!
+      - ACCEPT_EULA="Y"
+  sqlpad:
+    image: sqlpad/sqlpad:latest
+    hostname: sqlpad
+    ports:
+      - "3000:3000"
+    environment:
+      - SQLPAD_ADMIN=admin
+      - SQLPAD_ADMIN_PASSWORD=password
+
